@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 267 100% 77%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 268 70% 90%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 267 100% 77%;
+    --radius: 0.75rem;
+  }
+  
+  * {
+    @apply border-border selection:bg-highlight-purple/20 selection:text-white;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased overflow-x-hidden;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  html {
+    @apply scroll-smooth overflow-x-hidden;
+    width: 100%;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md bg-white/5 border border-white/10 shadow-lg max-w-full;
+  }
+
+  .input-field {
+    @apply rounded-md py-2 px-3 bg-secondary text-foreground focus:outline-none focus-visible:ring-1 focus-visible:ring-primary max-w-full;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-highlight-purple to-highlight-blue bg-clip-text text-transparent;
+  }
+}
+
+.formula-container {
+  overflow-x: auto;
+  padding: 0.5rem;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.distribution-container {
+  position: relative;
+  min-height: 180px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.katex {
+  font-size: 1em !important;
+  max-width: 100%;
+}
+
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
